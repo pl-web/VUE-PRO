@@ -1,10 +1,13 @@
 <template>
-  <input :type="type" :value="value" @input="onInput">
+  <div>
+    <input :type="type" :value="value" @input="onInput" v-bind="$attrs">
+  </div>
 </template>
 
 <script>
   export default {
     name: "Input",
+    inheritAttrs: false, // 避免继承来自Input的属性内容
     props: {
       value: {
         type: String,
@@ -32,5 +35,13 @@ input {
   border: 2px solid #000;
   text-indent: 10px;
   vertical-align: middle;
+}
+#operate-result {
+  width: 500px;
+  height: 25px;
+  border: 2px solid #000;
+  line-height: 25px;
+  color: rgb(0, 0, 0);
+  text-align: center !important;
 }
 </style>

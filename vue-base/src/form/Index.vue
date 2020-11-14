@@ -2,16 +2,16 @@
   <div id="main-page">
     <Form :model="model" :rules="rules">
       <FormItem label="请输入第一个数字">
-        <Input v-model="model.firstNumber" />
+        <Input v-model="model.firstNumber" placeholder="0" />
       </FormItem>
       <FormItem label="请输入第二个数字">
-        <Input v-model="model.secondNumber" />
+        <Input v-model="model.secondNumber" placeholder="0" />
       </FormItem>
       <FormItem label="请选择运算符号">
         <Operator :operator="model.operateSymbol"></Operator>
       </FormItem>
       <FormItem label="两数字计算结果为">
-        <div id="operate-result">{{ model.result }}</div>
+        <Input id="operate-result" v-model="model.result" disabled="true" placeholder="0" style="text-align: center" />
       </FormItem>
     </Form>
   </div>
@@ -39,7 +39,7 @@ export default {
         result: "",
       },
      rules: {
-       
+
      }
     };
   },
@@ -47,13 +47,4 @@ export default {
 </script>
 
 <style scoped>
-#operate-result {
-  width: 500px;
-  height: 25px;
-  border: 2px solid #000;
-  line-height: 25px;
-  color: rgb(0, 0, 0);
-}
-#main-page {
-}
 </style>
