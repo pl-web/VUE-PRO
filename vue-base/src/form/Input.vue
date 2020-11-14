@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input :type="type" :value="value" @input="onInput" v-bind="$attrs">
+    <input :type="type" :value="value" @input="onInput" v-bind="$attrs" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
     inheritAttrs: false, // 避免继承来自Input的属性内容
     props: {
       value: {
-        type: String,
+        type: String | Number,
         default: ""
       },
       type: {
@@ -23,6 +23,7 @@
       onInput: function(e) {
         // emit event
         this.$emit("input", e.target.value);
+        this.$parent.$emit("validate", e.target.value)
       }
     }
   }
