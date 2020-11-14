@@ -1,27 +1,32 @@
 <template>
   <div id="operator-group">
-    <span v-for="(item, index) in operator" :key="index" :class="'operator-button'+index" :style="{width: width + 'px',}" >
-    {{ item }}
+    <span
+      v-for="(item, index) in operator"
+      :key="index"
+      :class="'operator-button' + index"
+      :style="{ width: width + 'px' }"
+    >
+      {{ item }}
     </span>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Operator",
-    props: {
-      operator: {
-        type: Array,
-        required: true,
-        default: []
-      },
-      width: {
-        type: Number,
-        required: false,
-        default: 30
-      }
-    }
-  }
+export default {
+  name: "Operator",
+  props: {
+    operator: {
+      type: Array,
+      required: true,
+      default: [],
+    },
+    width: {
+      type: Number,
+      required: false,
+      default: 30,
+    },
+  },
+};
 </script>
 
 <style scoped>

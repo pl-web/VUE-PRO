@@ -2,6 +2,7 @@
   <div class="form-item">
     <label v-if="label">{{ label }}</label>
     <slot></slot>
+    <div v-if="error">{{ error }}</div>
   </div>
 </template>
 
@@ -13,6 +14,11 @@
         type: String,
         default: "",
         required: false
+      }
+    },
+    data () {
+      return {
+        error: '', // 如果为空，代表校验通过
       }
     }
   }
