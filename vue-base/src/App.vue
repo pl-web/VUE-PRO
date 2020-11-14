@@ -6,7 +6,8 @@
 
 <script>
 // import Index from './components/Index.vue'
-import Index from './form/Index.vue'
+// import Index from './form/Index.vue' // 进行计算的例子
+import Index from './FormComponent/Index.vue' // 表单提交的例子
 export default {
   name: 'App',
   components: {
