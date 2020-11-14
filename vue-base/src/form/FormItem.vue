@@ -9,6 +9,7 @@
 <script>
   export default {
     name: "FormItem",
+    inject: ['form'],
     props: {
       label: {
         type: String,

@@ -5,6 +5,7 @@
       :key="index"
       :class="'operator-button' + index"
       :style="{ width: width + 'px' }"
+      @click="toHandleOperator(item)"
     >
       {{ item }}
     </span>
@@ -14,6 +15,7 @@
 <script>
 export default {
   name: "Operator",
+  inject: ["form"],
   props: {
     operator: {
       type: Array,
@@ -25,6 +27,35 @@ export default {
       required: false,
       default: 30,
     },
+  },
+  computed: {
+    getFirstNumber() {
+      return this.form.model.firstNumber
+    },
+    getSecondNumber() {
+      return this.form.model.secondNumber
+    }
+  },
+  methods: {
+    toHandleOperator(item) {
+      switch (item) {
+        case "加":
+          this.add();
+          break;
+        case "减":
+          this.substract();
+          break;
+        case "乘":
+          this.multiply();
+          break;
+        default:
+          this.divide();
+      }
+    },
+    add() {},
+    substract() {},
+    multiply() {},
+    divide() {},
   },
 };
 </script>
