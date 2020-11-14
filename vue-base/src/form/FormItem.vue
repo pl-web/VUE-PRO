@@ -41,23 +41,29 @@ export default {
       // current rules
       const currentRule = this.form.rules[this.prop];
       // start to validate using the async-validator
-      const des = {
-        [this.prop]: currentRule,
-      };
-      const v = new V(des);
-      // validate 函数参数为校验源
-      v.validate(
-        {
-          [this.prop]: currentValue,
-        },
-        (err) => {
-          if (err) {
-            this.error = err[0].message
-          } else {
-            this.error = ''
-          }
-        }
-      );
+      // const des = {
+      //   [this.prop]: currentRule,
+      // };
+      // const v = new V(des);
+      // // validate 函数参数为校验源
+      // v.validate(
+      //   {
+      //     [this.prop]: currentValue,
+      //   },
+      //   (err) => {
+      //     if (err) {
+      //       this.error = err[0].message
+      //     } else {
+      //       this.error = ''
+      //     }
+      //   }
+      // );
+      const r = new RegExp(/^[0-9]*$/)
+      if (r.test(currentValue)) {
+        this.error = ""
+      } else {
+        this.error = currentRule[0].message
+      }
     },
   },
 };

@@ -47,14 +47,12 @@ export default {
       rules: {
         firstNumber: [
           {
-            message: "请输入正确的内容",
-            type: 'number'
+            message: "请输入正确的内容"
           }
         ],
         secondNumber: [
           {
-            message: "请输入正确的内容",
-            type: 'number'
+            message: "请输入正确的内容"
           }
         ]
       }
