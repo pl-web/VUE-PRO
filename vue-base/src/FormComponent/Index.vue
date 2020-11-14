@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Form>
+    <Form :model="user" :rules="rules">
       <FormItem label="用户名">
         <Input v-model="user.username" />
       </FormItem>

@@ -7,6 +7,7 @@
 <script>
   export default {
     name: "Input",
+    inject: ['form'],
     props: {
       value: {
         type: String,
@@ -21,7 +22,7 @@
     },
     methods: {
       onInput: function() {
-
+        
       }
     }
   }

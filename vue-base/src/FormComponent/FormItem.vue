@@ -7,8 +7,10 @@
 </template>
 
 <script>
+  import V from 'async-validator'
   export default {
     name: "FormItem",
+    inject: ['form'],
     props: {
       label: {
         type: String,
