@@ -29,11 +29,19 @@ export default {
     },
   },
   computed: {
-    getFirstNumber() {
-      return this.form.model.firstNumber
+    FirstNumberValue() {
+      return Number(this.form.model.firstNumber)
     },
-    getSecondNumber() {
-      return this.form.model.secondNumber
+    SecondNumberValue() {
+      return Number(this.form.model.secondNumber)
+    },
+    ResultValue: {
+      get() {
+        return this.form.model.result
+      },
+      set(val) {
+        this.form.model.result = val
+      }
     }
   },
   methods: {
@@ -52,10 +60,22 @@ export default {
           this.divide();
       }
     },
-    add() {},
-    substract() {},
-    multiply() {},
-    divide() {},
+    add() {
+      const res = this.FirstNumberValue + this.SecondNumberValue
+      this.ResultValue = res
+    },
+    substract() {
+      const res = this.FirstNumberValue - this.SecondNumberValue
+      this.ResultValue = res
+    },
+    multiply() {
+      const res = this.FirstNumberValue * this.SecondNumberValue
+      this.ResultValue = res
+    },
+    divide() {
+      const res = this.FirstNumberValue / this.SecondNumberValue
+      this.ResultValue = res
+    },
   },
 };
 </script>
